@@ -130,9 +130,9 @@ End Sub
 ```
 This macro provided outputs in about 1.2 seconds for the year 2017, and about 1.5 seconds for the year 2018.
 
-![Image](2017_01)
+![Image](https://github.com/MDHetrick/stock-analysis/blob/main/Resources/2017_01.png)
 
-![Image](2018_01)
+![Image](https://github.com/MDHetrick/stock-analysis/blob/main/Resources/2018_01.png)
 
 
 To improve the function, specifically the time it takes to run the macro. I refactored it by using arrays instead of looping multiple times. To do this I started with the following code preserved from the initial analysis:
@@ -324,9 +324,9 @@ End Sub
 Once I completed refactoring the code, I re-ran the analysis for both years to compare how the refactored code performed compared to the initial. Both years analyses ran in under 0.3 seconds.
 
 
-![Image](2017_02)
+![Image](https://github.com/MDHetrick/stock-analysis/blob/main/Resources/VBA_Challenge_2017.png)
 
-![Image](2018_02)
+![Image](https://github.com/MDHetrick/stock-analysis/blob/main/Resources/VBA_Challenge_2018.png)
 
 This was about a 1 second improvement on the original code for each year.
 
