@@ -132,10 +132,12 @@ End Sub
 ```
 This macro provided outputs in about 1.2 seconds for the year 2017, and about 1.5 seconds for the year 2018.
 
+![Image](2017_01)
+
+![Image](2018_01)
 
 
-
-I started with the following code preserved from the initial analysis
+To improve the function, specifically the time it takes to run the macro. I refactored it by using arrays instead of looping multiple times. To do this I started with the following code preserved from the initial analysis:
 
 ```
     Dim startTime As Single
@@ -282,7 +284,7 @@ At this point, I had all my values stored within the tickers, tickervolumes, tic
     Next tickerindex
 ```
 
-I also wanted my output to be formatted for visual pleasure
+I also wanted my output to be formatted for visual pleasure. This is also preserved from the initial subroutine
 
 ```
     'Formatting
@@ -310,13 +312,33 @@ I also wanted my output to be formatted for visual pleasure
         
     Next i
 ```
+I kept the ending timer and the message box as well to be able to evaluate performance and compare.
+
+```
+endTime = Timer
+
+MsgBox ("this code ran in " & (endTime - startTime) & " seconds for the year " & (yearvalue))
+
+End Sub
+
+```
+
+Once I completed refactoring the code, I re-ran the analysis for both years to compare how the refactored code performed compared to the initial. Both years analyses ran in under 0.3 seconds.
 
 
+![Image](2017_02)
 
+![Image](2018_02)
 
+This was about a 1 second improvement on the original code for each year.
 
 ## Summary 
 
-In a summary statement, address the following questions.
 What are the advantages or disadvantages of refactoring code?
+
+One of the advantages of refactoring code is the possibility of improving the code. In refactoring this code, the time to run the script was greatly improved. Refactoring code also allows the coder to maintain flexibility in understanding patterns by figuring out different ways to do things.
+
+There are also potentially disadvantages of refactoring code. First, it could be difficult to determine where to start. Starting over may not be necessary, but then an important step may be missed. Another disadvanteage could be that the refactored code could perform worse than the initial code. 
+
 How do these pros and cons apply to refactoring the original VBA script?
+The original script was less efficient because it looped through several loops and outputted into the output worksheet as it went. An advantage of this method is that it seemed relatively straightforward once I learned loops. When I was refactoring the code, I ended up with several versions that were far less efficient (run time >50 seconds), and some versions that crashed excel. At this point, I was not quite sure if there was much benefit to refactoring the code since < 2 seconds seemed far better than what I was getting. However once I successfully refactored the code with arrays, I found that it was a bit more straightforward to read and understand as well as being significantly quicker.
