@@ -4,8 +4,6 @@
 The purpose of this project is to develop a macro using VBA that will allow the client, Steve, to quickly and easily analyze a dataset of stock information.
 
 ## Results
-Results: Using images and examples of your code, compare the stock performance between 2017 and 2018, as well as the execution times of the original script and the refactored script.
-
 An initial macro was created to evaluate the total daily volume and return for a list of 12 tickers for one of two years. A timer was used in this macro to evaluate performance. This code used several nested loops to go through the the rows and place the data into the outputs.
 
 ```
@@ -341,4 +339,5 @@ One of the advantages of refactoring code is the possibility of improving the co
 There are also potentially disadvantages of refactoring code. First, it could be difficult to determine where to start. Starting over may not be necessary, but then an important step may be missed. Another disadvanteage could be that the refactored code could perform worse than the initial code. 
 
 How do these pros and cons apply to refactoring the original VBA script?
+
 The original script was less efficient because it looped through several loops and outputted into the output worksheet as it went. An advantage of this method is that it seemed relatively straightforward once I learned loops. When I was refactoring the code, I ended up with several versions that were far less efficient (run time >50 seconds), and some versions that crashed excel. At this point, I was not quite sure if there was much benefit to refactoring the code since < 2 seconds seemed far better than what I was getting. However once I successfully refactored the code with arrays, I found that it was a bit more straightforward to read and understand as well as being significantly quicker.
